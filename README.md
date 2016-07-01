@@ -5,6 +5,9 @@ A HPACK lib implemented in c++
 
 ### Usage
 ```c
+#include "HPacker.h"
+using namespace hpack;
+
 HPacker::KeyValueVector headers;
 headers.push_back(make_pair(":authority", "www.google.com"));
 headers.push_back(make_pair(":method", "GET"));
@@ -12,7 +15,7 @@ headers.push_back(make_pair(":path", "/"));
 
 uint8_t buf[1024];
 HPacker hpe;
-int ret = hpe.encode(headers, buf, len);
+int ret = hpe.encode(headers, buf, sizeof(buf));
 if (ret < 0) {
 	printf("encode failed\n");
 	return 1;

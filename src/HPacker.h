@@ -58,4 +58,4 @@ private:
 
 } // namespace hpack
 
-#endif /* __HPACK_H__ */
+#endif /* __HPacker_H__ */

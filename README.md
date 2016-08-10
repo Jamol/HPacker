@@ -9,9 +9,9 @@ A HPACK lib implemented in c++
 using namespace hpack;
 
 HPacker::KeyValueVector headers;
-headers.push_back(make_pair(":authority", "www.google.com"));
-headers.push_back(make_pair(":method", "GET"));
-headers.push_back(make_pair(":path", "/"));
+headers.emplace_back(":authority", "www.google.com");
+headers.emplace_back(":method", "GET");
+headers.emplace_back(":path", "/");
 
 uint8_t buf[1024];
 HPacker hpe;
